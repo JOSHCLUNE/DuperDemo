@@ -1,6 +1,6 @@
+import Duper
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Ring
-import Duper.Tactic
 import Mathlib.Tactic
 
 open Function
