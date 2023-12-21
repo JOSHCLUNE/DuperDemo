@@ -10,6 +10,6 @@ require «mathlib» from git "https://github.com/leanprover-community/mathlib4" 
 require «Duper» from git "https://github.com/leanprover-community/duper.git" @ "v0.0.5"
 
 @[default_target]
-lean_lib «duperDemo» {
+lean_lib «DuperDemo» {
   -- add library configuration options here
 }
