@@ -5,9 +5,9 @@ package «duperDemo» {
   -- add any package configuration options here
 }
 
-require «mathlib» from git "https://github.com/leanprover-community/mathlib4" @ "v4.7.0-rc2"
+require «mathlib» from git "https://github.com/leanprover-community/mathlib4" @ "v4.8.0-rc2"
 
-require «Duper» from git "https://github.com/leanprover-community/duper.git" @ "v0.0.11"
+require «Duper» from git "https://github.com/leanprover-community/duper.git" @ "v0.0.12"
 
 @[default_target]
 lean_lib «DuperDemo» {
