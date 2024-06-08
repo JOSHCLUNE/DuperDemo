@@ -48,17 +48,6 @@ example : ∀ f : α → Set α, ¬Surjective f := by
 example {s t : Set α} (h : s ⊆ t) : s ∩ u ⊆ t ∩ u := by
   duper [Set.mem_inter_iff, Set.subset_def, h]
 
-/- This problem will time out if Duper is run with the default maxHeartbeats. But if the maxHeatbeats
-   are increased, Duper can solve the problem. And once it does, `duper?` can be used to determine the
-   particular portfolio instance that solved the problem. If Duper is told to just use that portfolio
-   instance, then Duper can solve the problem in the default maxHeartbeats limit (200000). -/
-set_option maxHeartbeats 600000 in
 example (s : Finset ℝ) : ∑ i in s, (i^2 + 2 * i + 1) =
   ∑ i in s, i^2 + 2 * ∑ i in s, i + ∑ i in s, 1 := by
   duper [Finset.sum_add_distrib, Finset.mul_sum]
-
-/- Because portfolioInstance 1 was specified, Duper can allocate all of its heartbeats to running portfolio
-   instance 1, which allows Duper to solve the problem in the default maxHeartbeats limit. -/
-example (s : Finset ℝ) : ∑ i in s, (i^2 + 2 * i + 1) =
-  ∑ i in s, i^2 + 2 * ∑ i in s, i + ∑ i in s, 1 := by
-  duper [Finset.sum_add_distrib, Finset.mul_sum] {portfolioInstance := 1}
