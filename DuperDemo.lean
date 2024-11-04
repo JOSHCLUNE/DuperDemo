@@ -15,7 +15,7 @@ theorem barber_paradox {person : Type} {shaves : person → person → Prop}
 /- `duper?` will output a suggestion of a more specific `duper` call that will call
    just the instance of `duper` that was able to prove the goal. -/
 example {G : Type} [hG : Group G] (x y : G) : x * y * y⁻¹ = x :=
-  by duper? [mul_left_inv, one_mul, mul_assoc]
+  by duper? [inv_mul_cancel, one_mul, mul_assoc]
 
 example (a b : ℝ) : |a| - |b| ≤ |a - b| := by
   duper [sub_le_iff_le_add, sub_add_cancel, abs_add]
