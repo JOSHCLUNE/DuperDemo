@@ -7,7 +7,7 @@ package «duperDemo» {
 
 require «mathlib» from git "https://github.com/leanprover-community/mathlib4" @ "v4.13.0"
 
-require «Duper» from git "https://github.com/leanprover-community/duper.git" @ "v0.0.19"
+require «Duper» from git "https://github.com/leanprover-community/duper.git" @ "v0.0.20"
 
 @[default_target]
 lean_lib «DuperDemo» {
