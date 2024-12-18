@@ -38,12 +38,17 @@ example (surjg : Surjective g) (surjf : Surjective f) : Surjective (fun x => g (
 example (injg : Injective g) (injf : Injective f) : Injective (fun x => g (f x)) := by
   duper [Injective, *]
 
+/- **TODO** This example worked in old versions of Duper but a change was made to lean-auto's preprocessing
+   procedure such that this example no longer works. Will look into resolving that and will uncomment this
+   example once it is working again
+
 /- Attempting to call `duper` directly on the original goal will fail because it isn't able to generate a
    counterexample to Surjf on its own. But if we provide the counterexample, `duper` can solve from there. -/
 example : ∀ f : α → Set α, ¬Surjective f := by
   intro f Surjf
   have counterexample := Surjf {i | i ∉ f i}
   duper [Set.mem_setOf_eq, counterexample]
+-/
 
 example {s t : Set α} (h : s ⊆ t) : s ∩ u ⊆ t ∩ u := by
   duper [Set.mem_inter_iff, Set.subset_def, h]
